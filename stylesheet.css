@@ -1,0 +1,130 @@
+/* Jon Barron homepage template styles: original layout and typography.
+   Only project rows modified to accommodate text-only project entries. */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+}
+body {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 22px;
+}
+.page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.bio {
+  display: flex;
+  align-items: center;
+}
+.bio-text {
+  width: 63%;
+  padding: 2.5%;
+  box-sizing: border-box;
+}
+.bio-photo {
+  width: 37%;
+  padding: 2.5%;
+  box-sizing: border-box;
+}
+.bio-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.name {
+  padding-top: 20px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+}
+.bio-links {
+  text-align: center;
+}
+.section-header {
+  padding: 16px;
+}
+.papers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.paper,
+.misc-row {
+  display: grid;
+  grid-template-columns: 192px minmax(0, 1fr);
+  align-items: center;
+}
+.paper-info,
+.misc-links {
+  padding: 8px;
+}
+.papertitle {
+  font-size: 14px;
+  font-weight: 700;
+}
+.paper-authors {
+  text-wrap: balance;
+}
+.paper-desc {
+  margin: 14px 0 0;
+}
+/* Text-only projects use separated rows, without backgrounds. */
+.projects-heading {
+  padding-bottom: 0;
+}
+.papers {
+  margin-top: 0;
+  padding: 0 16px;
+  gap: 0;
+}
+.paper {
+  display: block;
+  border-bottom: 1px solid #ededed;
+}
+.paper:last-child { border-bottom: none; }
+.paper-info { padding: 14px 16px; }
+.paper-desc { margin-top: 8px; }
+@media (max-width: 600px) {
+  body { margin: 0; }
+  .bio { flex-direction: column-reverse; }
+  .bio-text { width: 100%; padding: 8px 16px; }
+  .bio-photo { width: 100%; padding: 20px 16px 0; text-align: center; }
+  .bio-photo img { width: 148px; margin: 0 auto; }
+  .name { padding-top: 8px; font-size: 28px; }
+  .paper, .misc-row { grid-template-columns: 124px minmax(0, 1fr); }
+  .paper-info, .misc-links { padding: 10px 12px; }
+  .papers { padding: 0 8px; }
+}
+@media print {
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .paper { break-inside: avoid; }
+}
